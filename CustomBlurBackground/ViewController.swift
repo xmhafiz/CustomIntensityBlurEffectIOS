@@ -15,7 +15,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showDetailAction(_ sender: Any) {
-        //
+        if let infoViewController = storyboard?.instantiateViewController(identifier: "InfoViewController") {
+            infoViewController.modalPresentationStyle = .overCurrentContext
+            infoViewController.modalTransitionStyle = .crossDissolve
+            present(infoViewController, animated: true)
+        }
     }
 }
 
